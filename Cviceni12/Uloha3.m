@@ -15,7 +15,7 @@ for i = 1:N
         v = tren_data(j, :, :);
         v_trida = tren_trida(j);
         tridy_vzoru(j) = v_trida;
-        dist(j) = sqrt(sum(sum((x-v).^2)));
+        dist(j) = sqrt(sum(sum(abs(power(x-v,2)))));
     end
     [min_dist, index] = min(dist);
     nejblizsi_trida = tridy_vzoru(index);
